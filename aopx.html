@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AOPx Wealth – Investment Strategies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #f9fafb;
+      color: #222;
+    }
+    header {
+      background-color: #374151;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    .values-section {
+      background: linear-gradient(135deg, #dc2626 0%, #ff0000 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .values-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      font-weight: 800;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .value-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .value-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: #f9fafb;
+    }
+    .value-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .accessibility-banner {
+      background: linear-gradient(135deg, #dc2626, #ff0000);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-weight: 600;
+    }
+    .regulatory-badges {
+      background-image: url('https://i.ibb.co/0p9NJnpg/photo.png');
+      background-size: cover;
+      background-position: center;
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
+    }
+    .regulatory-badges::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    .badges-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      background-color: white;
+      border: 2px solid #d1d5db;
+      border-radius: 12px;
+      font-weight: 600;
+      color: #374151;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .badge-icon {
+      width: 24px;
+      height: 24px;
+      background: linear-gradient(135deg, #dc2626, #ff0000);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 14px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .product {
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    .product h2 {
+      margin-top: 0;
+      font-size: 2rem;
+      color: #374151;
+    }
+    .minimum-investment {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #dc2626, #ff0000);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .product table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .product table, .product th, .product td {
+      border: 1px solid #ccc;
+    }
+    .product th, .product td {
+      padding: 12px;
+      text-align: left;
+    }
+    .product th {
+      background-color: #f9fafb;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #555;
+      background-color: #374151;
+      color: white;
+    }
+    @media (max-width: 768px) {
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+      .badges-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .minimum-investment {
+        position: static;
+        display: inline-block;
+        margin-bottom: 15px;
+      }
+      .regulatory-badges {
+        padding: 60px 20px;
+      }
+    }
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      .values-section h2 {
+        font-size: 1.8rem;
+      }
+      .product h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AOPx Wealth Management</h1>
+    <p>Advanced Investment Strategies – Offices in France | Registered ORIAS & AMF</p>
+  </header>
+
+  <div class="accessibility-banner">
+    🎯 Accessible Investment Solutions Starting from €5,000 | Simple Products, Professional Management
+  </div>
+
+  <div class="regulatory-badges">
+    <div class="badges-container">
+      <div class="badge">
+        <div class="badge-icon">✓</div>
+        <span>ORIAS Registered</span>
+      </div>
+      <div class="badge">
+        <div class="badge-icon">✓</div>
+        <span>AMF Compliant</span>
+      </div>
+      <div class="badge">
+        <div class="badge-icon">✓</div>
+        <span>French Authorities Approved</span>
+      </div>
+      <div class="badge">
+        <div class="badge-icon">€</div>
+        <span>From €5,000 Entry</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="values-section">
+    <h2>Our Investment Philosophy</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <h3>🚀 Aggressive Growth</h3>
+        <p>For investors seeking maximum capital appreciation through high-growth technology, AI, and emerging market opportunities. We target ambitious returns for those comfortable with volatility.</p>
+      </div>
+      <div class="value-card">
+        <h3>⚖️ Balanced Approach</h3>
+        <p>Centralized portfolio management combining growth potential with risk mitigation. Our balanced strategies adapt to market conditions while maintaining steady progression toward your goals.</p>
+      </div>
+      <div class="value-card">
+        <h3>🛡️ Secure Wealth</h3>
+        <p>Capital preservation and consistent income generation through conservative fixed-income, real estate, and diversified funds. Stability and peace of mind are our priorities.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="product">
+      <div class="minimum-investment">Entry Ticket €5,000</div>
+      <h2>AOPx – Total Growth 2030</h2>
+      <p><strong>Client:</strong> Growth-focused investors<br>
+      <strong>Horizon:</strong> 5–7 years<br>
+      <strong>Risk Level:</strong> High<br>
+      <strong>Objective:</strong> Aggressive long-term performance</p>
+
+      <table>
+        <tr><th>Asset Class</th><th>Instrument</th><th>Allocation</th><th>Goal</th></tr>
+        <tr><td>US Tech</td><td>Nasdaq 100 ETF</td><td>40%</td><td>High-growth tech exposure</td></tr>
+        <tr><td>Artificial Intelligence</td><td>AI & Robotics ETF</td><td>30%</td><td>Emerging tech leaders</td></tr>
+        <tr><td>Crypto Themes</td><td>Blockchain ETF</td><td>20%</td><td>Speculative digital economy</td></tr>
+      </table>
+    </div>
+
+    <div class="product">
+      <div class="minimum-investment">Entry Ticket €5,000</div>
+      <h2>AOPx – Crypto Only</h2>
+      <p><strong>Client:</strong> High-risk crypto investors<br>
+      <strong>Horizon:</strong> 3–5 years<br>
+      <strong>Risk Level:</strong> Very High<br>
+      <strong>Objective:</strong> Leverage blockchain growth cycles</p>
+
+      <table>
+        <tr><th>Asset Class</th><th>Instrument</th><th>Allocation</th><th>Notes</th></tr>
+        <tr><td>Core Crypto</td><td>Bitcoin/Ethereum ETFs</td><td>50%</td><td>Direct market exposure</td></tr>
+        <tr><td>Crypto Stocks</td><td>Blockchain Tech ETF</td><td>30%</td><td>Coinbase, MicroStrategy</td></tr>
+        <tr><td>Infrastructure</td><td>Crypto Mining ETFs</td><td>20%</td><td>Riot Blockchain, Galaxy Digital</td></tr>
+      </table>
+      <p style="margin-top: 20px; font-size: 0.9rem; color: #6b7280;"><strong>*</strong> AOPx owns its proprietary token (AOPX) within our crypto portfolio strategy</p>
+    </div>
+
+    <div class="product">
+      <div class="minimum-investment">Entry Ticket €5,000</div>
+      <h2>AOPx – Secure</h2>
+      <p><strong>Client:</strong> Conservative, capital preservation<br>
+      <strong>Horizon:</strong> 3–6 years<br>
+      <strong>Risk Level:</strong> Low to Moderate<br>
+      <strong>Objective:</strong> Stability and recurring income</p>
+
+      <table>
+        <tr><th>Asset Class</th><th>Instrument</th><th>Allocation</th><th>Purpose</th></tr>
+        <tr><td>Fixed Income</td><td>Euro Funds</td><td>50%</td><td>Stability</td></tr>
+        <tr><td>Real Estate</td><td>SCPI</td><td>40%</td><td>Passive income</td></tr>
+        <tr><td>Diversification</td><td>Balanced Fund</td><td>10%</td><td>Liquidity</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 AOPx Wealth Management – ORIAS Registered | AMF Compliant | Based in France<br>
+    Professional Investment Services | Regulated Financial Products | Accessible from €5,000
+  </footer>
+</body>
+</html>
