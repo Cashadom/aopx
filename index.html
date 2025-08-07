@@ -1,208 +1,138 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>L-P CAPITAL | Conseil en Investissements</title>
+  <title>L-P Capital | Wealth Structuring • Smart Investment • Performance</title>
+  <meta name="description" content="L-P Capital - Wealth management solutions: simulations, tokenization integration, and CGP/CIF digital tools.">
   <style>
     :root {
-      --red: #FF5A5A;
-      --dark: #1f2937;
-      --gray: #4b5563;
-      --light: #f9fafb;
-      --white: #ffffff;
+      --primary-red: #FF5A5A;
+      --dark-navy: #2D3748;
+      --light-gray: #F7FAFC;
+      --white: #FFFFFF;
+      --text-gray: #718096;
     }
-
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--light-gray);
+      color: var(--dark-navy);
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--light);
-      color: var(--dark);
+      line-height: 1.6;
     }
-
-    header {
-      background-color: var(--white);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #e5e7eb;
-      position: sticky;
-      top: 0;
-      z-index: 999;
+    .hero {
+      background: linear-gradient(135deg, var(--dark-navy), #334155);
+      color: var(--white);
+      padding: 6rem 2rem;
+      text-align: center;
     }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-weight: bold;
-      font-size: 1.5rem;
-      color: var(--dark);
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      color: #CBD5E0;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--primary-red);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
       text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease;
     }
-
-    .logo img {
-      width: 32px;
+    .btn-primary:hover {
+      background: #e04a4a;
     }
-
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-    }
-
     .section {
-      margin-bottom: 4rem;
+      padding: 4rem 2rem;
+      text-align: center;
     }
-
     .section h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
-      color: var(--red);
     }
-
     .section p {
-      color: var(--gray);
-      line-height: 1.7;
+      color: var(--text-gray);
       max-width: 700px;
+      margin: 0 auto 2rem;
     }
-
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
     .card {
-      background-color: var(--white);
+      background: var(--white);
+      border-left: 4px solid var(--primary-red);
       padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-      margin-bottom: 2rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      border-radius: 0 8px 8px 0;
+      flex: 1 1 300px;
+      max-width: 400px;
+      text-align: left;
+      transition: transform 0.3s ease;
     }
-
+    .card:hover {
+      transform: translateY(-5px);
+    }
     .card h3 {
       margin-top: 0;
-      color: var(--dark);
+      color: var(--primary-red);
     }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .service {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-
-    .service img.bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.25;
-      z-index: 0;
-    }
-
-    .service-content {
-      position: relative;
-      z-index: 1;
-      padding: 2rem;
-      backdrop-filter: blur(2px);
-    }
-
-    .service h3 {
-      margin: 0;
-      font-size: 1.2rem;
-      color: var(--dark);
-    }
-
-    .service p {
-      color: var(--gray);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    footer {
-      background-color: #0f172a;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <a class="logo" href="#">
-      <img src="https://i.ibb.co/0p9NJnpg/photo.png" alt="L-P Logo">
-      L-P CAPITAL
-    </a>
-  </header>
+  <section class="hero">
+    <h1>Modern Wealth Structuring, by L-P Capital</h1>
+    <p>Build solid portfolios with performance, transparency, and digital elegance.</p>
+    <a href="#services" class="btn-primary">Discover Our Solutions</a>
+  </section>
 
-  <main>
-    <section class="section">
-      <h2>Conseil en Investissements</h2>
-      <p>
-        L-P Capital accompagne les investisseurs avec des solutions sur mesure, combinant expertise patrimoniale, technologies innovantes et outils de simulation avancés. Basé en France, nous assurons la conformité ORIAS & AMF.
-      </p>
-    </section>
+  <section class="section" id="services">
+    <h2>What We Offer</h2>
+    <p>From wealth studies to tokenized asset strategies, L-P Capital provides tools and advisory to elevate your practice.</p>
 
-    <section class="section">
-      <h2>Nos Services</h2>
-      <div class="services">
-        <div class="service">
-          <div class="service-content">
-            <h3>Advisory & Allocation (CIF)</h3>
-            <p>
-              Étude patrimoniale complète, allocation par objectifs et structuration multi-produit : assurance vie, ETF, SCPI, PER.
-            </p>
-          </div>
-        </div>
-
-        <div class="service">
-          <img src="https://i.ibb.co/0p9NJnpg/photo.png" alt="Background" class="bg">
-          <div class="service-content">
-            <h3>Simulateur L-P Capital</h3>
-            <p>
-              Génération de rapports PDF personnalisés, estimation de rendement net, intégration de fiscalité et visualisation claire des portefeuilles.
-            </p>
-          </div>
-        </div>
-
-        <div class="service">
-          <div class="service-content">
-            <h3>Tokenisation Sécurisée</h3>
-            <p>
-              Accès limité à des actifs innovants (immobilier, actions, obligations) via plateformes partenaires réglementées.
-            </p>
-          </div>
-        </div>
-
-        <div class="service">
-          <div class="service-content">
-            <h3>Outils White Label pour CGP</h3>
-            <p>
-              Génération automatique d'études client brandées, abonnements mensuels ou pack PDF ponctuels dès 49,99 €.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Contact</h2>
+    <div class="card-container">
       <div class="card">
-        <p><strong>Téléphone :</strong> 06 12 34 56 78</p>
-        <p><strong>Email :</strong> l.prestataire@email.com</p>
-        <p><strong>Site web :</strong> <a href="https://www.lpcapital.fr" target="_blank">www.lpcapital.fr</a></p>
+        <h3>📊 Custom Wealth Advisory</h3>
+        <p>Tailored simulations, 5% target returns, multi-product allocations (AV, SCPI, ETF, PER...)</p>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    © 2025 L-P Capital. Conseiller en investissements enregistré ORIAS & conforme AMF.
-  </footer>
+      <div class="card">
+        <h3>🧠 Smart PDF Simulator</h3>
+        <p>Elegant client reports with editable inputs, risk assessment, and strategy explanations.</p>
+      </div>
+
+      <div class="card">
+        <h3>🌐 Tokenization Integration</h3>
+        <p>Optional "Tokenization Pocket" for 5–10% of portfolios. Stocks, RE tokens, DeFi. Fully CIF compliant.</p>
+      </div>
+
+      <div class="card">
+        <h3>🤝 White-Label for CGP/CIF</h3>
+        <p>Tool access for €49.99/month: 15 client studies, auto-delete after 30 days. Add your logo, ORIAS ID.</p>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
