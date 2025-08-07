@@ -3,37 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>L-P Capital | Wealth Structuring • Smart Investment • Performance</title>
-  <meta name="description" content="L-P Capital - Wealth management solutions: simulations, tokenization integration, and CGP/CIF digital tools.">
+  <title>L-P Venture | Business Development • Customs Optimization • Financial Advisory</title>
+  <meta name="description" content="L-P Venture Group: Business development, customs optimization in Peru, and regulated financial advisory services.">
   <style>
     :root {
-      --primary-red: #FF5A5A;
-      --dark-navy: #2D3748;
-      --light-gray: #F7FAFC;
+      --primary-red: #E63946;
+      --dark-gray: #2B2D42;
+      --light-gray: #EDF2F4;
       --white: #FFFFFF;
-      --text-gray: #718096;
+      --text-gray: #8D99AE;
     }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: var(--light-gray);
-      color: var(--dark-navy);
+      color: var(--dark-gray);
       margin: 0;
       line-height: 1.6;
     }
     .hero {
-      background: linear-gradient(135deg, var(--dark-navy), #334155);
+      background: linear-gradient(135deg, var(--dark-gray), #1D1F2B);
       color: var(--white);
-      padding: 6rem 2rem;
+      padding: 8rem 2rem;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: var(--light-gray);
+      transform: skewY(-2deg);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
       line-height: 1.2;
     }
     .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
+      font-size: 1.5rem;
+      margin-bottom: 2.5rem;
       color: #CBD5E0;
       max-width: 800px;
       margin-left: auto;
@@ -43,96 +62,175 @@
       display: inline-block;
       background: var(--primary-red);
       color: var(--white);
-      padding: 0.75rem 1.5rem;
+      padding: 1rem 2rem;
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+      border: 2px solid var(--primary-red);
     }
     .btn-primary:hover {
-      background: #e04a4a;
+      background: transparent;
+      color: var(--primary-red);
     }
     .section {
-      padding: 4rem 2rem;
+      padding: 6rem 2rem;
       text-align: center;
+      position: relative;
     }
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--dark-gray);
+      position: relative;
+      display: inline-block;
     }
-    .section p {
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--primary-red);
+    }
+    .section p.lead {
       color: var(--text-gray);
-      max-width: 700px;
-      margin: 0 auto 2rem;
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      font-size: 1.2rem;
     }
     .card-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 2rem;
       max-width: 1300px;
       margin: 0 auto;
     }
     .card {
       background: var(--white);
-      border-left: 4px solid var(--primary-red);
-      padding: 2rem;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
-      border-radius: 0 8px 8px 0;
-      flex: 1 1 300px;
+      border-top: 4px solid var(--primary-red);
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border-radius: 8px;
+      flex: 1 1 350px;
       max-width: 400px;
-      text-align: left;
-      transition: transform 0.3s ease;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    }
+    .card-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary-red);
     }
     .card h3 {
-      margin-top: 0;
-      color: var(--primary-red);
+      margin: 0 0 1.5rem 0;
+      color: var(--dark-gray);
+      font-size: 1.8rem;
+    }
+    .card p {
+      color: var(--text-gray);
+      margin-bottom: 0;
+    }
+    .brand-logos {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin: 4rem auto;
+      max-width: 1000px;
+    }
+    .brand-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .brand-logo img {
+      height: 60px;
+      width: auto;
+    }
+    .brand-name {
+      font-weight: bold;
+      color: var(--dark-gray);
+    }
+    .footer {
+      background: var(--dark-gray);
+      color: var(--white);
+      padding: 3rem 2rem;
+      text-align: center;
     }
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
       }
       .hero p {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+      }
+      .section {
+        padding: 4rem 1.5rem;
       }
     }
   </style>
 </head>
 <body>
   <section class="hero">
-    <h1>Modern Wealth Structuring, by L-P Capital</h1>
-    <p>Build solid portfolios with performance, transparency, and digital elegance.</p>
-    <a href="#services" class="btn-primary">Discover Our Solutions</a>
+    <div class="hero-content">
+      <h1>L-P Venture Group</h1>
+      <p>Strategic business solutions across three specialized divisions</p>
+      <a href="#services" class="btn-primary">Explore Our Services</a>
+    </div>
   </section>
 
   <section class="section" id="services">
-    <h2>What We Offer</h2>
-    <p>From wealth studies to tokenized asset strategies, L-P Capital provides tools and advisory to elevate your practice.</p>
+    <h2 class="section-title">Our Specializations</h2>
+    <p class="lead">Three complementary business lines designed to optimize your international operations and financial strategy</p>
 
     <div class="card-container">
       <div class="card">
-        <h3>📊 Custom Wealth Advisory</h3>
-        <p>Tailored simulations, 5% target returns, multi-product allocations (AV, SCPI, ETF, PER...)</p>
+        <div class="card-icon">🚀</div>
+        <h3>L-P Newbiz</h3>
+        <p>Business development and prospection services to help you identify and capture new market opportunities with tailored strategies.</p>
       </div>
 
       <div class="card">
-        <h3>🧠 Smart PDF Simulator</h3>
-        <p>Elegant client reports with editable inputs, risk assessment, and strategy explanations.</p>
+        <div class="card-icon">🌎</div>
+        <h3>L-P Factory</h3>
+        <p>Customs optimization and operational setup in Peru for efficient international trade and manufacturing advantages.</p>
       </div>
 
       <div class="card">
-        <h3>🌐 Tokenization Integration</h3>
-        <p>Optional "Tokenization Pocket" for 5–10% of portfolios. Stocks, RE tokens, DeFi. Fully CIF compliant.</p>
+        <div class="card-icon">💼</div>
+        <h3>L-P Capital</h3>
+        <p>Regulated financial advisory (ORIAS & AMF France) for investment strategies and wealth management solutions.</p>
       </div>
+    </div>
 
-      <div class="card">
-        <h3>🤝 White-Label for CGP/CIF</h3>
-        <p>Tool access for €49.99/month: 15 client studies, auto-delete after 30 days. Add your logo, ORIAS ID.</p>
+    <div class="brand-logos">
+      <div class="brand-logo">
+        <div class="card-icon">🚀</div>
+        <div class="brand-name">L-P Newbiz</div>
+      </div>
+      <div class="brand-logo">
+        <div class="card-icon">🌎</div>
+        <div class="brand-name">L-P Factory</div>
+      </div>
+      <div class="brand-logo">
+        <div class="card-icon">💼</div>
+        <div class="brand-name">L-P Capital</div>
       </div>
     </div>
   </section>
+
+  <footer class="footer">
+    <p>© 2023 L-P Venture Group. All rights reserved.</p>
+  </footer>
 </body>
 </html>
