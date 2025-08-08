@@ -3,820 +3,235 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>L-P Venture Group | International Business Consulting & Financial Advisory</title>
-  <meta name="description" content="Global consulting firm specializing in business development, customs optimization, and regulated financial advisory services across Europe and Latin America.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>L-P Venture | Business Development • Customs Optimization • Financial Advisory</title>
+  <meta name="description" content="L-P Venture Group: Business development, customs optimization in Peru, and regulated financial advisory services.">
   <style>
     :root {
-      --primary: #003366;
-      --secondary: #E63946;
-      --accent: #FFD700;
-      --dark: #1A1A2E;
-      --light: #F8F9FA;
-      --text: #4A4A4A;
-      --text-light: #6C757D;
+      --primary-red: #E63946;
+      --dark-gray: #2B2D42;
+      --light-gray: #EDF2F4;
+      --white: #FFFFFF;
+      --text-gray: #8D99AE;
     }
-
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--light-gray);
+      color: var(--dark-gray);
       margin: 0;
-      padding: 0;
-      color: var(--text);
-      line-height: 1.7;
-      background-color: var(--light);
+      line-height: 1.6;
     }
-
-    h1, h2, h3, h4 {
-      font-family: 'Playfair Display', serif;
-      color: var(--primary);
+    .hero {
+      background: linear-gradient(135deg, var(--dark-gray), #1D1F2B);
+      color: var(--white);
+      padding: 8rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-
-    .container {
-      width: 100%;
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: var(--light-gray);
+      transform: skewY(-2deg);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
     }
-
-    /* Header */
-    header {
-      background-color: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      position: fixed;
-      width: 100%;
-      z-index: 1000;
-    }
-
-    .header-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 0;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--primary);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-    }
-
-    .logo span {
-      color: var(--secondary);
-    }
-
-    .nav-menu {
-      display: flex;
-      list-style: none;
-    }
-
-    .nav-menu li {
-      margin-left: 30px;
-    }
-
-    .nav-menu a {
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
-      transition: color 0.3s;
-      position: relative;
-    }
-
-    .nav-menu a:hover {
-      color: var(--primary);
-    }
-
-    .nav-menu a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -5px;
-      left: 0;
-      background-color: var(--secondary);
-      transition: width 0.3s;
-    }
-
-    .nav-menu a:hover::after {
-      width: 100%;
-    }
-
-    .mobile-menu {
-      display: none;
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-      height: 100vh;
-      min-height: 700px;
-      display: flex;
-      align-items: center;
-      color: white;
-      text-align: center;
-      padding-top: 80px;
-    }
-
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
     .hero h1 {
       font-size: 3.5rem;
-      margin-bottom: 20px;
-      color: white;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
     }
-
     .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 40px;
-      opacity: 0.9;
+      font-size: 1.5rem;
+      margin-bottom: 2.5rem;
+      color: #CBD5E0;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
-
-    .btn {
+    .btn-primary {
       display: inline-block;
-      padding: 15px 30px;
-      background-color: var(--secondary);
-      color: white;
+      background: var(--primary-red);
+      color: var(--white);
+      padding: 1rem 2rem;
       text-decoration: none;
-      border-radius: 4px;
-      font-weight: 600;
-      transition: all 0.3s;
-      border: 2px solid var(--secondary);
+      border-radius: 8px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+      border: 2px solid var(--primary-red);
     }
-
-    .btn:hover {
-      background-color: transparent;
-      color: white;
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--primary-red);
     }
-
-    .btn-outline {
-      background-color: transparent;
-      border-color: white;
-      margin-left: 15px;
-    }
-
-    .btn-outline:hover {
-      background-color: white;
-      color: var(--primary);
-    }
-
-    /* About Section */
     .section {
-      padding: 100px 0;
-    }
-
-    .section-title {
+      padding: 6rem 2rem;
       text-align: center;
-      margin-bottom: 60px;
+      position: relative;
     }
-
-    .section-title h2 {
+    .section-title {
       font-size: 2.5rem;
-      margin-bottom: 15px;
+      margin-bottom: 1.5rem;
+      color: var(--dark-gray);
       position: relative;
       display: inline-block;
     }
-
-    .section-title h2::after {
-      content: '';
+    .section-title::after {
+      content: "";
       position: absolute;
-      width: 80px;
-      height: 3px;
-      background-color: var(--secondary);
       bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--primary-red);
     }
-
-    .section-title p {
-      color: var(--text-light);
-      max-width: 700px;
+    .section p.lead {
+      color: var(--text-gray);
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      font-size: 1.2rem;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 1300px;
       margin: 0 auto;
     }
-
-    .about-content {
-      display: flex;
-      align-items: center;
-      gap: 50px;
-    }
-
-    .about-text {
-      flex: 1;
-    }
-
-    .about-image {
-      flex: 1;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    }
-
-    .about-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* Services Section */
-    .services {
-      background-color: white;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
-    }
-
-    .service-card {
-      background-color: white;
+    .card {
+      background: var(--white);
+      border-top: 4px solid var(--primary-red);
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      transition: transform 0.3s, box-shadow 0.3s;
+      flex: 1 1 350px;
+      max-width: 400px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
-    .service-card:hover {
+    .card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
     }
-
-    .service-icon {
-      height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .card-icon {
       font-size: 3rem;
-      color: var(--secondary);
-      background-color: rgba(230, 57, 70, 0.1);
+      margin-bottom: 1.5rem;
+      color: var(--primary-red);
     }
-
-    .service-content {
-      padding: 30px;
+    .card h3 {
+      margin: 0 0 1.5rem 0;
+      color: var(--dark-gray);
+      font-size: 1.8rem;
     }
-
-    .service-content h3 {
-      margin-bottom: 15px;
-      font-size: 1.5rem;
+    .card p {
+      color: var(--text-gray);
+      margin-bottom: 0;
     }
-
-    .service-content p {
-      color: var(--text-light);
-      margin-bottom: 20px;
-    }
-
-    .service-link {
-      color: var(--primary);
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .service-link i {
-      margin-left: 5px;
-      transition: transform 0.3s;
-    }
-
-    .service-link:hover i {
-      transform: translateX(5px);
-    }
-
-    /* Divisions Section */
-    .divisions {
-      background-color: var(--light);
-    }
-
-    .divisions-tabs {
+    .brand-logos {
       display: flex;
       justify-content: center;
-      margin-bottom: 40px;
+      gap: 3rem;
       flex-wrap: wrap;
+      margin: 4rem auto;
+      max-width: 1000px;
     }
-
-    .tab-btn {
-      padding: 12px 25px;
-      background-color: transparent;
-      border: none;
-      border-bottom: 3px solid transparent;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      color: var(--text-light);
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .tab-btn.active {
-      color: var(--primary);
-      border-bottom-color: var(--secondary);
-    }
-
-    .tab-content {
-      display: none;
-    }
-
-    .tab-content.active {
-      display: block;
-      animation: fadeIn 0.5s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .division-content {
+    .brand-logo {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 50px;
+      gap: 1rem;
     }
-
-    .division-text {
-      flex: 1;
+    .brand-logo img {
+      height: 60px;
+      width: auto;
     }
-
-    .division-image {
-      flex: 1;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    .brand-name {
+      font-weight: bold;
+      color: var(--dark-gray);
     }
-
-    .division-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* Stats Section */
-    .stats {
-      background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.9)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-      color: white;
+    .footer {
+      background: var(--dark-gray);
+      color: var(--white);
+      padding: 3rem 2rem;
       text-align: center;
     }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
-    }
-
-    .stat-item {
-      padding: 30px;
-    }
-
-    .stat-number {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: var(--accent);
-    }
-
-    .stat-text {
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
-
-    /* Team Section */
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .team-member {
-      background-color: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      text-align: center;
-    }
-
-    .member-image {
-      height: 250px;
-      overflow: hidden;
-    }
-
-    .member-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
-
-    .team-member:hover .member-image img {
-      transform: scale(1.05);
-    }
-
-    .member-info {
-      padding: 25px;
-    }
-
-    .member-info h4 {
-      margin-bottom: 5px;
-    }
-
-    .member-position {
-      color: var(--secondary);
-      font-weight: 500;
-      margin-bottom: 15px;
-      display: block;
-    }
-
-    .member-social {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .member-social a {
-      color: var(--text-light);
-      transition: color 0.3s;
-    }
-
-    .member-social a:hover {
-      color: var(--primary);
-    }
-
-    /* Contact Section */
-    .contact {
-      background-color: white;
-    }
-
-    .contact-container {
-      display: flex;
-      gap: 50px;
-    }
-
-    .contact-info {
-      flex: 1;
-    }
-
-    .contact-form {
-      flex: 1;
-    }
-
-    .info-item {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 30px;
-    }
-
-    .info-icon {
-      font-size: 1.5rem;
-      color: var(--secondary);
-      margin-right: 20px;
-      margin-top: 5px;
-    }
-
-    .info-content h4 {
-      margin-bottom: 5px;
-    }
-
-    .info-content p, .info-content a {
-      color: var(--text-light);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .info-content a:hover {
-      color: var(--primary);
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 12px 15px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-family: 'Montserrat', sans-serif;
-      transition: border-color 0.3s;
-    }
-
-    .form-control:focus {
-      outline: none;
-      border-color: var(--primary);
-    }
-
-    textarea.form-control {
-      min-height: 150px;
-      resize: vertical;
-    }
-
-    /* Footer */
-    footer {
-      background-color: var(--dark);
-      color: white;
-      padding: 80px 0 30px;
-    }
-
-    .footer-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
-      margin-bottom: 60px;
-    }
-
-    .footer-logo {
-      font-size: 24px;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 20px;
-      display: inline-block;
-    }
-
-    .footer-logo span {
-      color: var(--secondary);
-    }
-
-    .footer-about p {
-      opacity: 0.8;
-      margin-bottom: 20px;
-    }
-
-    .footer-social {
-      display: flex;
-      gap: 15px;
-    }
-
-    .footer-social a {
-      color: white;
-      font-size: 1.2rem;
-      transition: color 0.3s;
-    }
-
-    .footer-social a:hover {
-      color: var(--secondary);
-    }
-
-    .footer-links h4, .footer-newsletter h4 {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-      position: relative;
-      padding-bottom: 10px;
-    }
-
-    .footer-links h4::after, .footer-newsletter h4::after {
-      content: '';
-      position: absolute;
-      width: 40px;
-      height: 2px;
-      background-color: var(--secondary);
-      bottom: 0;
-      left: 0;
-    }
-
-    .footer-links ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .footer-links li {
-      margin-bottom: 10px;
-    }
-
-    .footer-links a {
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .footer-links a:hover {
-      color: var(--secondary);
-    }
-
-    .newsletter-form {
-      display: flex;
-      margin-bottom: 20px;
-    }
-
-    .newsletter-input {
-      flex: 1;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 4px 0 0 4px;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .newsletter-btn {
-      background-color: var(--secondary);
-      color: white;
-      border: none;
-      padding: 0 15px;
-      border-radius: 0 4px 4px 0;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .newsletter-btn:hover {
-      background-color: #d62c39;
-    }
-
-    .footer-bottom {
-      text-align: center;
-      padding-top: 30px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .footer-bottom p {
-      opacity: 0.7;
-      font-size: 0.9rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 992px) {
-      .about-content, .division-content, .contact-container {
-        flex-direction: column;
-      }
-      
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
     @media (max-width: 768px) {
-      .nav-menu {
-        display: none;
-      }
-      
-      .mobile-menu {
-        display: block;
-      }
-      
       .hero h1 {
         font-size: 2.5rem;
       }
-      
-      .btn-outline {
-        margin-left: 0;
-        margin-top: 15px;
-        display: block;
+      .hero p {
+        font-size: 1.2rem;
       }
-      
       .section {
-        padding: 70px 0;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .hero {
-        min-height: 600px;
+        padding: 4rem 1.5rem;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="container header-container">
-      <a href="#" class="logo">L-P <span>Venture Group</span></a>
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#divisions">Divisions</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="mobile-menu">
-          <i class="fas fa-bars"></i>
-        </div>
-      </nav>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>L-P Venture Group</h1>
+      <p>Strategic business solutions across three specialized divisions</p>
+      <a href="#services" class="btn-primary">Explore Our Services</a>
     </div>
-  </header>
+  </section>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="hero-content">
-        <h1>Global Business Consulting Solutions</h1>
-        <p>Strategic advisory services to optimize your international operations, streamline customs processes, and enhance your financial performance across Europe and Latin America.</p>
-        <div>
-          <a href="#contact" class="btn">Get Started</a>
-          <a href="#services" class="btn btn-outline">Our Services</a>
-        </div>
+  <section class="section" id="services">
+    <h2 class="section-title">Our Specializations</h2>
+    <p class="lead">Three complementary business lines designed to optimize your international operations and financial strategy</p>
+
+    <div class="card-container">
+      <div class="card">
+        <div class="card-icon">🚀</div>
+        <h3>L-P Newbiz</h3>
+        <p>Business development and prospection services to help you identify and capture new market opportunities with tailored strategies.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🌎</div>
+        <h3>L-P Factory</h3>
+        <p>Customs optimization and operational setup in Peru for efficient international trade and manufacturing advantages.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">💼</div>
+        <h3>L-P Capital</h3>
+        <p>Regulated financial advisory (ORIAS & AMF France) for investment strategies and wealth management solutions.</p>
+      </div>
+    </div>
+
+    <div class="brand-logos">
+      <div class="brand-logo">
+        <div class="card-icon">🚀</div>
+        <div class="brand-name">L-P Newbiz</div>
+      </div>
+      <div class="brand-logo">
+        <div class="card-icon">🌎</div>
+        <div class="brand-name">L-P Factory</div>
+      </div>
+      <div class="brand-logo">
+        <div class="card-icon">💼</div>
+        <div class="brand-name">L-P Capital</div>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section class="section" id="about">
-    <div class="container">
-      <div class="section-title">
-        <h2>About L-P Venture Group</h2>
-        <p>We are a global consulting firm with specialized divisions serving international clients across multiple industries.</p>
-      </div>
-      <div class="about-content">
-        <div class="about-text">
-          <h3>Trusted International Advisors</h3>
-          <p>Founded in 2010, L-P Venture Group has grown into a respected international consulting firm with offices in Paris, Lima, and Miami. Our team combines local expertise with global perspective to deliver exceptional results for our clients.</p>
-          <p>We specialize in bridging business operations between Europe and Latin America, with particular focus on France and Peru. Our three specialized divisions work synergistically to provide comprehensive solutions for international businesses.</p>
-          <p>Our approach is tailored, data-driven, and results-oriented. We don't believe in one-size-fits-all solutions, but rather in developing strategies that align with your specific business objectives and market conditions.</p>
-        </div>
-        <div class="about-image">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="L-P Venture Group team meeting">
-        </div>
-      </div>
-    </div>
-  </section>
+  <footer class="footer">
+    <p>© 2023 L-P Venture Group. All rights reserved.</p>
+  </footer>
+</body>
+</html>
 
-  <!-- Services Section -->
-  <section class="section services" id="services">
-    <div class="container">
-      <div class="section-title">
-        <h2>Our Consulting Services</h2>
-        <p>Comprehensive solutions designed to address your most pressing international business challenges.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-globe-americas"></i>
-          </div>
-          <div class="service-content">
-            <h3>Market Entry Strategy</h3>
-            <p>Comprehensive analysis and strategic planning for successful market expansion into Latin America or Europe, including regulatory compliance and competitive positioning.</p>
-            <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-warehouse"></i>
-          </div>
-          <div class="service-content">
-            <h3>Customs Optimization</h3>
-            <p>Streamline your international trade operations with our customs expertise in Peru, reducing costs and improving efficiency in your supply chain.</p>
-            <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <div class="service-content">
-            <h3>Financial Advisory</h3>
-            <p>Regulated investment advice and wealth management solutions for high-net-worth individuals and institutional clients in Europe.</p>
-            <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-handshake"></i>
-          </div>
-          <div class="service-content">
-            <h3>Business Development</h3>
-            <p>Identify and capture new business opportunities through our extensive network and market intelligence services.</p>
-            <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-industry"></i>
-          </div>
-          <div class="service-content">
-            <h3>Operational Setup</h3>
-            <p>End-to-end support for establishing manufacturing or operational facilities in Peru, from site selection to workforce development.</p>
-            <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-euro-sign"></i>
-          </div>
-          <div class="service-content">
-            <h3>Investment Strategy</h3>
-            <p>Customized portfolio management and investment strategies aligned with your financial goals and risk tolerance.</p>
-            <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Divisions Section -->
-  <section class="section divisions" id="divisions">
-    <div class="container">
-      <div class="section-title">
-        <h2>Our Specialized Divisions</h2>
-        <p>Three complementary business lines designed to optimize your international operations and financial strategy.</p>
-      </div>
-      <div class="divisions-tabs">
-        <button class="tab-btn active" data-tab="newbiz">L-P Newbiz</button>
-        <button class="tab-btn" data-tab="factory">L-P Factory</button>
-        <button class="tab-btn" data-tab="ca
