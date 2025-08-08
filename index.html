@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
       --primary-red: #E63946;
@@ -24,19 +25,84 @@
       color: var(--anthracite);
       margin: 0;
       line-height: 1.6;
+      overflow-x: hidden;
     }
     
+    /* Header */
+    header {
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--anthracite);
+      text-decoration: none;
+    }
+    
+    .logo span {
+      color: var(--primary-red);
+    }
+    
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+    
+    .nav-menu a {
+      text-decoration: none;
+      color: var(--anthracite);
+      font-weight: 600;
+      transition: all 0.3s;
+      position: relative;
+    }
+    
+    .nav-menu a:hover {
+      color: var(--primary-red);
+    }
+    
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--primary-red);
+      transition: width 0.3s;
+    }
+    
+    .nav-menu a:hover::after {
+      width: 100%;
+    }
+    
+    /* Hero Section */
     .hero {
       background: linear-gradient(rgba(43, 45, 66, 0.85), rgba(43, 45, 66, 0.85)), 
                   url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
       height: 100vh;
-      min-height: 700px;
+      min-height: 800px;
       display: flex;
       align-items: center;
       color: var(--white);
       text-align: center;
       position: relative;
-      overflow: hidden;
     }
     
     .hero::after {
@@ -56,12 +122,24 @@
       z-index: 2;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 40px;
+      animation: fadeInUp 1s ease;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
+      font-size: 4.5rem;
       margin-bottom: 1.5rem;
       line-height: 1.2;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
@@ -80,215 +158,554 @@
       display: inline-block;
       background: var(--primary-red);
       color: var(--white);
-      padding: 1rem 2rem;
+      padding: 1rem 2.5rem;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 50px;
       font-weight: bold;
       transition: all 0.3s ease;
       font-size: 1.1rem;
       border: 2px solid var(--primary-red);
       text-transform: uppercase;
       letter-spacing: 1px;
+      box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
     }
     
     .btn-primary:hover {
       background: transparent;
       color: var(--primary-red);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(230, 57, 70, 0.4);
     }
     
-    .section {
-      padding: 6rem 2rem;
-      text-align: center;
+    /* Divisions Section */
+    .divisions {
+      padding: 8rem 2rem;
       position: relative;
     }
     
     .section-title {
       font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 1.5rem;
       color: var(--anthracite);
       position: relative;
       display: inline-block;
+      text-align: center;
+      width: 100%;
     }
     
     .section-title::after {
       content: "";
       position: absolute;
-      bottom: -10px;
+      bottom: -15px;
       left: 50%;
       transform: translateX(-50%);
-      width: 80px;
+      width: 100px;
       height: 4px;
       background: var(--primary-red);
     }
     
-    .section p.lead {
+    .section-subtitle {
       color: var(--medium-gray);
       max-width: 800px;
-      margin: 0 auto 3rem;
+      margin: 0 auto 4rem;
       font-size: 1.2rem;
+      text-align: center;
     }
     
-    .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
+    .divisions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
       max-width: 1300px;
       margin: 0 auto;
     }
     
-    .card {
+    .division-card {
       background: var(--white);
-      border-top: 4px solid var(--primary-red);
-      padding: 2.5rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      border-radius: 8px;
-      flex: 1 1 350px;
-      max-width: 400px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      z-index: 1;
     }
     
-    .card:hover {
+    .division-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.12);
     }
     
-    .card-icon {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
-      color: var(--primary-red);
+    .division-image {
+      height: 250px;
+      overflow: hidden;
     }
     
-    .card h3 {
-      font-family: 'Playfair Display', serif;
-      margin: 0 0 1.5rem 0;
-      color: var(--anthracite);
-      font-size: 1.8rem;
+    .division-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
     }
     
-    .card p {
-      color: var(--medium-gray);
-      margin-bottom: 0;
+    .division-card:hover .division-image img {
+      transform: scale(1.05);
     }
     
-    .brand-logos {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      flex-wrap: wrap;
-      margin: 4rem auto;
-      max-width: 1000px;
+    .division-content {
+      padding: 2.5rem;
+      position: relative;
     }
     
-    .brand-logo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-    
-    .brand-logo .logo-icon {
-      width: 80px;
-      height: 80px;
-      background: var(--white);
+    .division-number {
+      position: absolute;
+      top: -30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: var(--primary-red);
+      color: var(--white);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
-      color: var(--primary-red);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    
-    .brand-name {
+      font-size: 1.5rem;
       font-weight: bold;
+    }
+    
+    .division-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
       color: var(--anthracite);
-      font-size: 1.2rem;
     }
     
-    .footer {
-      background: var(--anthracite);
+    .division-text {
+      color: var(--medium-gray);
+      margin-bottom: 2rem;
+    }
+    
+    .division-features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 2rem;
+    }
+    
+    .division-features li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 25px;
+    }
+    
+    .division-features li::before {
+      content: "✓";
+      color: var(--primary-red);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+    
+    .division-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--primary-red);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .division-link i {
+      margin-left: 8px;
+      transition: transform 0.3s;
+    }
+    
+    .division-link:hover {
+      color: var(--anthracite);
+    }
+    
+    .division-link:hover i {
+      transform: translateX(5px);
+    }
+    
+    /* Stats Section */
+    .stats {
+      background: linear-gradient(rgba(43, 45, 66, 0.9), rgba(43, 45, 66, 0.9)), 
+                  url('https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
       color: var(--white);
-      padding: 3rem 2rem;
+      padding: 6rem 2rem;
       text-align: center;
+      position: relative;
     }
     
-    .footer p {
+    .stats::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, var(--primary-red) 0%, rgba(43, 45, 66, 0.8) 100%);
       opacity: 0.8;
     }
     
-    @media (max-width: 768px) {
+    .stats-container {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .stats-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+    
+    .stat-item {
+      padding: 2rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      backdrop-filter: blur(5px);
+      transition: transform 0.3s;
+    }
+    
+    .stat-item:hover {
+      transform: translateY(-10px);
+    }
+    
+    .stat-number {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+    
+    .stat-text {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--anthracite);
+      color: var(--white);
+      padding: 5rem 2rem 2rem;
+      text-align: center;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      text-align: left;
+    }
+    
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+    
+    .footer-logo span {
+      color: var(--primary-red);
+    }
+    
+    .footer-about p {
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-social {
+      display: flex;
+      gap: 15px;
+    }
+    
+    .footer-social a {
+      color: var(--white);
+      font-size: 1.2rem;
+      transition: all 0.3s;
+    }
+    
+    .footer-social a:hover {
+      color: var(--primary-red);
+      transform: translateY(-3px);
+    }
+    
+    .footer-links h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .footer-links h3::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: var(--primary-red);
+    }
+    
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: var(--primary-red);
+      padding-left: 5px;
+    }
+    
+    .footer-bottom {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
       .hero h1 {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
+      }
+      
+      .divisions-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 15px 20px;
+      }
+      
+      .nav-menu {
+        display: none;
+      }
+      
+      .mobile-menu {
+        display: block;
+        font-size: 1.5rem;
+        color: var(--anthracite);
+      }
+      
+      .hero h1 {
+        font-size: 2.8rem;
       }
       
       .hero p {
         font-size: 1.2rem;
       }
       
-      .section {
-        padding: 4rem 1.5rem;
+      .section-title {
+        font-size: 2.5rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero {
+        min-height: 700px;
       }
       
-      .section-title {
-        font-size: 2rem;
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      .btn-primary {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="#" class="logo">L-P <span>Venture</span></a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#divisions">Divisions</a></li>
+          <li><a href="#stats">Results</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1>L-P Venture Group</h1>
-      <p>Strategic business solutions across three specialized divisions</p>
-      <a href="#services" class="btn-primary">Explore Our Services</a>
+      <h1>Navigate Global Business With Confidence</h1>
+      <p>Strategic solutions across three specialized divisions to optimize your international operations and financial performance</p>
+      <a href="#divisions" class="btn-primary">Explore Our Divisions</a>
     </div>
   </section>
 
-  <section class="section" id="services">
-    <h2 class="section-title">Our Specializations</h2>
-    <p class="lead">Three complementary business lines designed to optimize your international operations and financial strategy</p>
-
-    <div class="card-container">
-      <div class="card">
-        <div class="card-icon">🚀</div>
-        <h3>L-P Newbiz</h3>
-        <p>Business development and prospection services to help you identify and capture new market opportunities with tailored strategies.</p>
+  <!-- Divisions Section -->
+  <section class="divisions" id="divisions">
+    <h2 class="section-title">Our Specialized Divisions</h2>
+    <p class="section-subtitle">Three complementary business lines working together to drive your international success</p>
+    
+    <div class="divisions-grid">
+      <!-- L-P Newbiz -->
+      <div class="division-card">
+        <div class="division-image">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Business Development">
+        </div>
+        <div class="division-content">
+          <div class="division-number">01</div>
+          <h3 class="division-title">L-P Newbiz</h3>
+          <p class="division-text">Business development and prospection services to identify and capture new market opportunities with tailored strategies.</p>
+          <ul class="division-features">
+            <li>Market research and analysis</li>
+            <li>Lead generation and qualification</li>
+            <li>Strategic partnership development</li>
+          </ul>
+          <a href="#" class="division-link">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
       </div>
-
-      <div class="card">
-        <div class="card-icon">🌎</div>
-        <h3>L-P Factory</h3>
-        <p>Customs optimization and operational setup in Peru for efficient international trade and manufacturing advantages.</p>
+      
+      <!-- L-P Factory -->
+      <div class="division-card">
+        <div class="division-image">
+          <img src="https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Customs Optimization">
+        </div>
+        <div class="division-content">
+          <div class="division-number">02</div>
+          <h3 class="division-title">L-P Factory</h3>
+          <p class="division-text">Customs optimization and operational setup in Peru for efficient international trade and manufacturing advantages.</p>
+          <ul class="division-features">
+            <li>Customs clearance optimization</li>
+            <li>Trade compliance consulting</li>
+            <li>Operational setup in Peru</li>
+          </ul>
+          <a href="#" class="division-link">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
       </div>
-
-      <div class="card">
-        <div class="card-icon">💼</div>
-        <h3>L-P Capital</h3>
-        <p>Regulated financial advisory (ORIAS & AMF France) for investment strategies and wealth management solutions.</p>
-      </div>
-    </div>
-
-    <div class="brand-logos">
-      <div class="brand-logo">
-        <div class="logo-icon">🚀</div>
-        <div class="brand-name">L-P Newbiz</div>
-      </div>
-      <div class="brand-logo">
-        <div class="logo-icon">🌎</div>
-        <div class="brand-name">L-P Factory</div>
-      </div>
-      <div class="brand-logo">
-        <div class="logo-icon">💼</div>
-        <div class="brand-name">L-P Capital</div>
+      
+      <!-- L-P Capital -->
+      <div class="division-card">
+        <div class="division-image">
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Financial Advisory">
+        </div>
+        <div class="division-content">
+          <div class="division-number">03</div>
+          <h3 class="division-title">L-P Capital</h3>
+          <p class="division-text">Regulated financial advisory (ORIAS & AMF France) for investment strategies and wealth management solutions.</p>
+          <ul class="division-features">
+            <li>Wealth management solutions</li>
+            <li>Investment portfolio strategy</li>
+            <li>Regulatory compliance advisory</li>
+          </ul>
+          <a href="#" class="division-link">Learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <p>© 2023 L-P Venture Group. All rights reserved.</p>
+  <!-- Stats Section -->
+  <section class="stats" id="stats">
+    <div class="stats-container">
+      <h3 class="stats-title">Our Global Impact</h3>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">12+</div>
+          <div class="stat-text">Years of Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">150+</div>
+          <div class="stat-text">Satisfied Clients</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">3</div>
+          <div class="stat-text">Continents Served</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-text">Dedicated Support</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="footer-container">
+      <div class="footer-about">
+        <a href="#" class="footer-logo">L-P <span>Venture</span></a>
+        <p>Strategic business solutions across three specialized divisions to optimize your international operations and financial strategy.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-links">
+        <h3>Divisions</h3>
+        <ul>
+          <li><a href="#">L-P Newbiz</a></li>
+          <li><a href="#">L-P Factory</a></li>
+          <li><a href="#">L-P Capital</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Team</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">News</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-links">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:contact@lpventure.com">contact@lpventure.com</a></li>
+          <li><a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
+          <li>Paris • Lima • Miami</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2023 L-P Venture Group. All rights reserved.</p>
+    </div>
   </footer>
 </body>
   </html>
