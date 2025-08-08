@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>L-P Venture Group | Business Development • Customs Optimization • Financial Advisory</title>
-  <meta name="description" content="Global consulting firm specializing in business development, customs optimization, and regulated financial advisory services across Europe and Latin America.">
+  <meta name="description" content="Global consulting firm specializing in business development, customs optimization, and regulated financial advisory services.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -17,55 +17,40 @@
       --medium-gray: #6C757D;
       --light-gray: #EDF2F4;
       --white: #FFFFFF;
-      --gradient-red: linear-gradient(135deg, #E63946 0%, #D70015 100%);
     }
     
     body {
       font-family: 'Montserrat', sans-serif;
-      background: var(--light-gray);
+      background: var(--white);
       color: var(--anthracite);
       margin: 0;
       line-height: 1.6;
-      overflow-x: hidden;
-    }
-    
-    h1, h2, h3, h4 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 600;
-    }
-    
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 24px;
     }
     
     /* Header */
-    .header {
+    header {
+      background: var(--anthracite);
       position: fixed;
-      top: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(43, 45, 66, 0.95);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
     }
     
     .header-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 0;
+      padding: 20px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
     }
     
     .logo {
+      font-family: 'Playfair Display', serif;
       font-size: 28px;
       font-weight: 700;
       color: var(--white);
       text-decoration: none;
-      display: flex;
-      align-items: center;
     }
     
     .logo span {
@@ -80,60 +65,18 @@
     
     .nav-menu a {
       text-decoration: none;
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255,255,255,0.9);
       font-weight: 600;
-      font-size: 15px;
-      position: relative;
-      transition: all 0.3s ease;
-      padding: 8px 0;
+      transition: all 0.3s;
     }
     
     .nav-menu a:hover {
-      color: var(--white);
-    }
-    
-    .nav-menu a::before {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 50%;
-      background: var(--gradient-red);
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-    }
-    
-    .nav-menu a:hover::before {
-      width: 100%;
-    }
-    
-    .nav-cta {
-      background: var(--gradient-red);
-      padding: 10px 24px;
-      border-radius: 25px;
-      color: var(--white) !important;
-      font-weight: 600;
-      box-shadow: 0 4px 20px rgba(230, 57, 70, 0.3);
-      transition: all 0.3s ease;
-    }
-    
-    .nav-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(230, 57, 70, 0.4);
-    }
-    
-    /* Mobile menu */
-    .mobile-menu {
-      display: none;
-      font-size: 24px;
-      color: var(--white);
-      cursor: pointer;
+      color: var(--primary-red);
     }
     
     /* Hero Section */
     .hero {
-      background: linear-gradient(rgba(43, 45, 66, 0.85), rgba(43, 45, 66, 0.85)), 
+      background: linear-gradient(rgba(43, 45, 66, 0.9), rgba(43, 45, 66, 0.9)), 
                   url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
       height: 100vh;
       min-height: 700px;
@@ -141,106 +84,126 @@
       align-items: center;
       color: var(--white);
       text-align: center;
-      position: relative;
-    }
-    
-    .hero::after {
-      content: "";
-      position: absolute;
-      bottom: -50px;
-      left: 0;
-      right: 0;
-      height: 100px;
-      background: var(--light-gray);
-      transform: skewY(-2deg);
-      z-index: 1;
+      padding-top: 80px;
     }
     
     .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 0 40px;
+      padding: 0 20px;
     }
     
     .hero h1 {
-      font-size: 4.5rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
       margin-bottom: 1.5rem;
       line-height: 1.2;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
     }
     
     .hero p {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       margin-bottom: 2.5rem;
-      color: var(--light-gray);
-      max-width: 800px;
+      color: rgba(255,255,255,0.9);
+      max-width: 700px;
       margin-left: auto;
       margin-right: auto;
     }
     
     .btn-primary {
       display: inline-block;
-      background: var(--gradient-red);
+      background: var(--primary-red);
       color: var(--white);
       padding: 1rem 2.5rem;
-      text-decoration: none;
       border-radius: 50px;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      font-size: 1.1rem;
-      border: none;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
       box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
     }
     
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(230, 57, 70, 0.4);
+      box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
+    }
+    
+    /* Metrics Section */
+    .metrics {
+      background: var(--light-gray);
+      padding: 5rem 2rem;
+    }
+    
+    .metrics-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    
+    .metric-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      text-align: center;
+      border-top: 4px solid var(--primary-red);
+    }
+    
+    .metric-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-red);
+      margin-bottom: 0.5rem;
+    }
+    
+    .metric-label {
+      color: var(--dark-gray);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     
     /* Divisions Section */
     .divisions {
-      padding: 8rem 2rem;
-      position: relative;
+      padding: 6rem 2rem;
+      background: var(--white);
     }
     
     .section-title {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
       color: var(--anthracite);
       position: relative;
       display: inline-block;
-      text-align: center;
-      width: 100%;
     }
     
-    .section-title::after {
-      content: "";
+    .section-title h2:after {
+      content: '';
       position: absolute;
-      bottom: -15px;
+      bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
-      width: 100px;
+      width: 80px;
       height: 4px;
       background: var(--primary-red);
     }
     
-    .section-subtitle {
+    .section-title p {
       color: var(--medium-gray);
-      max-width: 800px;
-      margin: 0 auto 4rem;
-      font-size: 1.2rem;
-      text-align: center;
+      max-width: 700px;
+      margin: 1rem auto 0;
     }
     
     .divisions-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 40px;
-      max-width: 1300px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
       margin: 0 auto;
     }
     
@@ -248,19 +211,16 @@
       background: var(--white);
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      position: relative;
-      z-index: 1;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
     }
     
     .division-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.12);
     }
     
     .division-image {
-      height: 250px;
+      height: 200px;
       overflow: hidden;
     }
     
@@ -268,7 +228,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
+      transition: transform 0.5s;
     }
     
     .division-card:hover .division-image img {
@@ -276,150 +236,26 @@
     }
     
     .division-content {
-      padding: 2.5rem;
-      position: relative;
-    }
-    
-    .division-number {
-      position: absolute;
-      top: -30px;
-      right: 30px;
-      width: 60px;
-      height: 60px;
-      background: var(--primary-red);
-      color: var(--white);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    
-    .division-title {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: var(--anthracite);
-    }
-    
-    .division-text {
-      color: var(--medium-gray);
-      margin-bottom: 2rem;
-    }
-    
-    .division-features {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 2rem;
-    }
-    
-    .division-features li {
-      margin-bottom: 0.8rem;
-      position: relative;
-      padding-left: 25px;
-    }
-    
-    .division-features li::before {
-      content: "✓";
-      color: var(--primary-red);
-      position: absolute;
-      left: 0;
-      font-weight: bold;
-    }
-    
-    .division-link {
-      display: inline-flex;
-      align-items: center;
-      color: var(--primary-red);
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-    
-    .division-link i {
-      margin-left: 8px;
-      transition: transform 0.3s;
-    }
-    
-    .division-link:hover {
-      color: var(--anthracite);
-    }
-    
-    .division-link:hover i {
-      transform: translateX(5px);
-    }
-    
-    /* Stats Section */
-    .stats {
-      background: linear-gradient(rgba(43, 45, 66, 0.9), rgba(43, 45, 66, 0.9)), 
-                  url('https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-      color: var(--white);
-      padding: 6rem 2rem;
-      text-align: center;
-      position: relative;
-    }
-    
-    .stats::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: var(--gradient-red);
-      opacity: 0.8;
-    }
-    
-    .stats-container {
-      position: relative;
-      z-index: 2;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .stats-title {
-      font-size: 2.5rem;
-      margin-bottom: 3rem;
-    }
-    
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
-    }
-    
-    .stats-item {
       padding: 2rem;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      backdrop-filter: blur(5px);
-      transition: transform 0.3s;
     }
     
-    .stats-item:hover {
-      transform: translateY(-8px);
-      background: rgba(255, 255, 255, 0.2);
-    }
-    
-    .stats-number {
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: var(--white);
+    .division-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
       margin-bottom: 1rem;
+      color: var(--anthracite);
     }
     
-    .stats-label {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+    .division-content p {
+      color: var(--medium-gray);
+      margin-bottom: 1.5rem;
     }
     
     /* Footer */
     footer {
       background: var(--anthracite);
       color: var(--white);
-      padding: 5rem 2rem 2rem;
+      padding: 4rem 2rem 2rem;
       text-align: center;
     }
     
@@ -428,16 +264,14 @@
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
+      gap: 2rem;
       text-align: left;
     }
     
     .footer-logo {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 1.5rem;
-      display: inline-block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
     }
     
     .footer-logo span {
@@ -451,33 +285,30 @@
     
     .footer-social {
       display: flex;
-      gap: 15px;
+      gap: 1rem;
     }
     
     .footer-social a {
       color: var(--white);
-      font-size: 1.2rem;
       transition: all 0.3s;
     }
     
     .footer-social a:hover {
       color: var(--primary-red);
-      transform: translateY(-3px);
     }
     
-    .footer-links h3 {
-      font-size: 1.5rem;
+    .footer-links h4 {
+      font-family: 'Playfair Display', serif;
       margin-bottom: 1.5rem;
       position: relative;
-      display: inline-block;
     }
     
-    .footer-links h3::after {
-      content: "";
+    .footer-links h4:after {
+      content: '';
       position: absolute;
       bottom: -8px;
       left: 0;
-      width: 50px;
+      width: 40px;
       height: 2px;
       background: var(--primary-red);
     }
@@ -492,7 +323,7 @@
     }
     
     .footer-links a {
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255,255,255,0.8);
       text-decoration: none;
       transition: all 0.3s;
     }
@@ -503,23 +334,12 @@
     }
     
     .footer-bottom {
-      margin-top: 4rem;
+      margin-top: 3rem;
       padding-top: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
     
     /* Responsive */
-    @media (max-width: 992px) {
-      .hero h1 {
-        font-size: 3.5rem;
-      }
-      
-      .divisions-grid {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-      }
-    }
-    
     @media (max-width: 768px) {
       .header-container {
         padding: 15px 20px;
@@ -529,150 +349,107 @@
         display: none;
       }
       
-      .mobile-menu {
-        display: block;
-      }
-      
       .hero h1 {
-        font-size: 2.8rem;
-      }
-      
-      .hero p {
-        font-size: 1.2rem;
-      }
-      
-      .section-title {
         font-size: 2.5rem;
+      }
+      
+      .metrics-container {
+        grid-template-columns: 1fr 1fr;
       }
     }
     
-    @media (max-width: 576px) {
-      .hero {
-        min-height: 700px;
+    @media (max-width: 480px) {
+      .metrics-container {
+        grid-template-columns: 1fr;
       }
       
       .hero h1 {
-        font-size: 2.2rem;
-      }
-      
-      .stats-grid {
-        grid-template-columns: 1fr;
+        font-size: 2rem;
       }
     }
   </style>
 </head>
 <body>
   <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <div class="header-container">
-        <a href="#" class="logo">L-P <span>Venture</span></a>
-        <nav>
-          <ul class="nav-menu">
-            <li><a href="#divisions">Divisions</a></li>
-            <li><a href="#stats">Results</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#contact" class="nav-cta">Get Started</a></li>
-          </ul>
-          <div class="mobile-menu">
-            <i class="fas fa-bars"></i>
-          </div>
-        </nav>
-      </div>
+  <header>
+    <div class="header-container">
+      <a href="#" class="logo">L-P <span>Venture</span></a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#divisions">Divisions</a></li>
+          <li><a href="#metrics">Results</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Navigate Global Business With Confidence</h1>
-      <p>Strategic solutions across three specialized divisions to optimize your international operations and financial performance</p>
+      <h1>Global Business Solutions</h1>
+      <p>Strategic advisory services to optimize your international operations and financial performance</p>
       <a href="#divisions" class="btn-primary">Explore Our Divisions</a>
+    </div>
+  </section>
+
+  <!-- Metrics Section -->
+  <section class="metrics" id="metrics">
+    <div class="metrics-container">
+      <div class="metric-card">
+        <div class="metric-value">€50M+</div>
+        <div class="metric-label">Capital Managed</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">95%</div>
+        <div class="metric-label">Client Satisfaction</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">24/7</div>
+        <div class="metric-label">Global Support</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">3</div>
+        <div class="metric-label">Continents</div>
+      </div>
     </div>
   </section>
 
   <!-- Divisions Section -->
   <section class="divisions" id="divisions">
-    <h2 class="section-title">Our Specialized Divisions</h2>
-    <p class="section-subtitle">Three complementary business lines working together to drive your international success</p>
+    <div class="section-title">
+      <h2>Our Specialized Divisions</h2>
+      <p>Three complementary business lines designed to optimize your international operations</p>
+    </div>
     
     <div class="divisions-grid">
-      <!-- L-P Newbiz -->
       <div class="division-card">
         <div class="division-image">
           <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Business Development">
         </div>
         <div class="division-content">
-          <div class="division-number">01</div>
-          <h3 class="division-title">L-P Newbiz</h3>
-          <p class="division-text">Business development and prospection services to identify and capture new market opportunities with tailored strategies.</p>
-          <ul class="division-features">
-            <li>Market research and analysis</li>
-            <li>Lead generation and qualification</li>
-            <li>Strategic partnership development</li>
-          </ul>
-          <a href="#" class="division-link">Learn more <i class="fas fa-arrow-right"></i></a>
+          <h3>L-P Newbiz</h3>
+          <p>Business development and prospection services to help you identify and capture new market opportunities.</p>
         </div>
       </div>
       
-      <!-- L-P Factory -->
       <div class="division-card">
         <div class="division-image">
           <img src="https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Customs Optimization">
         </div>
         <div class="division-content">
-          <div class="division-number">02</div>
-          <h3 class="division-title">L-P Factory</h3>
-          <p class="division-text">Customs optimization and operational setup in Peru for efficient international trade and manufacturing advantages.</p>
-          <ul class="division-features">
-            <li>Customs clearance optimization</li>
-            <li>Trade compliance consulting</li>
-            <li>Operational setup in Peru</li>
-          </ul>
-          <a href="#" class="division-link">Learn more <i class="fas fa-arrow-right"></i></a>
+          <h3>L-P Factory</h3>
+          <p>Customs optimization and operational setup in Peru for efficient international trade.</p>
         </div>
       </div>
       
-      <!-- L-P Capital -->
       <div class="division-card">
         <div class="division-image">
           <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Financial Advisory">
         </div>
         <div class="division-content">
-          <div class="division-number">03</div>
-          <h3 class="division-title">L-P Capital</h3>
-          <p class="division-text">Regulated financial advisory (ORIAS & AMF France) for investment strategies and wealth management solutions.</p>
-          <ul class="division-features">
-            <li>Wealth management solutions</li>
-            <li>Investment portfolio strategy</li>
-            <li>Regulatory compliance advisory</li>
-          </ul>
-          <a href="#" class="division-link">Learn more <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats Section -->
-  <section class="stats" id="stats">
-    <div class="stats-container">
-      <h3 class="stats-title">Our Global Impact</h3>
-      <div class="stats-grid">
-        <div class="stats-item">
-          <div class="stats-number">12+</div>
-          <div class="stats-label">Years of Experience</div>
-        </div>
-        <div class="stats-item">
-          <div class="stats-number">150+</div>
-          <div class="stats-label">Satisfied Clients</div>
-        </div>
-        <div class="stats-item">
-          <div class="stats-number">3</div>
-          <div class="stats-label">Continents Served</div>
-        </div>
-        <div class="stats-item">
-          <div class="stats-number">24/7</div>
-          <div class="stats-label">Dedicated Support</div>
+          <h3>L-P Capital</h3>
+          <p>Regulated financial advisory (ORIAS & AMF France) for investment strategies.</p>
         </div>
       </div>
     </div>
@@ -682,18 +459,17 @@
   <footer id="contact">
     <div class="footer-container">
       <div class="footer-about">
-        <a href="#" class="footer-logo">L-P <span>Venture</span></a>
-        <p>Strategic business solutions across three specialized divisions to optimize your international operations and financial strategy.</p>
+        <div class="footer-logo">L-P <span>Venture</span></div>
+        <p>Strategic business solutions across three specialized divisions to optimize your international operations.</p>
         <div class="footer-social">
           <a href="#"><i class="fab fa-linkedin-in"></i></a>
           <a href="#"><i class="fab fa-twitter"></i></a>
           <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
         </div>
       </div>
       
       <div class="footer-links">
-        <h3>Divisions</h3>
+        <h4>Divisions</h4>
         <ul>
           <li><a href="#">L-P Newbiz</a></li>
           <li><a href="#">L-P Factory</a></li>
@@ -702,17 +478,16 @@
       </div>
       
       <div class="footer-links">
-        <h3>Company</h3>
+        <h4>Company</h4>
         <ul>
           <li><a href="#">About Us</a></li>
           <li><a href="#">Our Team</a></li>
           <li><a href="#">Careers</a></li>
-          <li><a href="#">News</a></li>
         </ul>
       </div>
       
       <div class="footer-links">
-        <h3>Contact</h3>
+        <h4>Contact</h4>
         <ul>
           <li><a href="mailto:contact@lpventure.com">contact@lpventure.com</a></li>
           <li><a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
@@ -725,27 +500,5 @@
       <p>&copy; 2023 L-P Venture Group. All rights reserved.</p>
     </div>
   </footer>
-
-  <script>
-    // Mobile menu toggle
-    document.querySelector('.mobile-menu').addEventListener('click', function() {
-      const navMenu = document.querySelector('.nav-menu');
-      navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-  </script>
 </body>
   </html>
