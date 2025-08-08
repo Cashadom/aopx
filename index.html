@@ -3,31 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>L-P Venture | Business Development • Customs Optimization • Financial Advisory</title>
+  <title>L-P Venture Group | Business Development • Customs Optimization • Financial Advisory</title>
   <meta name="description" content="L-P Venture Group: Business development, customs optimization in Peru, and regulated financial advisory services.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary-red: #E63946;
-      --dark-gray: #2B2D42;
+      --anthracite: #2B2D42;
+      --dark-gray: #4A4A4A;
+      --medium-gray: #6C757D;
       --light-gray: #EDF2F4;
       --white: #FFFFFF;
-      --text-gray: #8D99AE;
     }
+    
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Montserrat', sans-serif;
       background: var(--light-gray);
-      color: var(--dark-gray);
+      color: var(--anthracite);
       margin: 0;
       line-height: 1.6;
     }
+    
     .hero {
-      background: linear-gradient(135deg, var(--dark-gray), #1D1F2B);
+      background: linear-gradient(rgba(43, 45, 66, 0.85), rgba(43, 45, 66, 0.85)), 
+                  url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
       color: var(--white);
-      padding: 8rem 2rem;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
+    
     .hero::after {
       content: "";
       position: absolute;
@@ -39,25 +50,32 @@
       transform: skewY(-2deg);
       z-index: 1;
     }
+    
     .hero-content {
       position: relative;
       z-index: 2;
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 20px;
     }
+    
     .hero h1 {
+      font-family: 'Playfair Display', serif;
       font-size: 3.5rem;
       margin-bottom: 1.5rem;
       line-height: 1.2;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
     }
+    
     .hero p {
       font-size: 1.5rem;
       margin-bottom: 2.5rem;
-      color: #CBD5E0;
+      color: var(--light-gray);
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
     }
+    
     .btn-primary {
       display: inline-block;
       background: var(--primary-red);
@@ -69,23 +87,30 @@
       transition: all 0.3s ease;
       font-size: 1.1rem;
       border: 2px solid var(--primary-red);
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
+    
     .btn-primary:hover {
       background: transparent;
       color: var(--primary-red);
     }
+    
     .section {
       padding: 6rem 2rem;
       text-align: center;
       position: relative;
     }
+    
     .section-title {
+      font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
-      color: var(--dark-gray);
+      color: var(--anthracite);
       position: relative;
       display: inline-block;
     }
+    
     .section-title::after {
       content: "";
       position: absolute;
@@ -96,12 +121,14 @@
       height: 4px;
       background: var(--primary-red);
     }
+    
     .section p.lead {
-      color: var(--text-gray);
+      color: var(--medium-gray);
       max-width: 800px;
       margin: 0 auto 3rem;
       font-size: 1.2rem;
     }
+    
     .card-container {
       display: flex;
       flex-wrap: wrap;
@@ -110,6 +137,7 @@
       max-width: 1300px;
       margin: 0 auto;
     }
+    
     .card {
       background: var(--white);
       border-top: 4px solid var(--primary-red);
@@ -121,24 +149,30 @@
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    
     .card:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 35px rgba(0,0,0,0.12);
     }
+    
     .card-icon {
       font-size: 3rem;
       margin-bottom: 1.5rem;
       color: var(--primary-red);
     }
+    
     .card h3 {
+      font-family: 'Playfair Display', serif;
       margin: 0 0 1.5rem 0;
-      color: var(--dark-gray);
+      color: var(--anthracite);
       font-size: 1.8rem;
     }
+    
     .card p {
-      color: var(--text-gray);
+      color: var(--medium-gray);
       margin-bottom: 0;
     }
+    
     .brand-logos {
       display: flex;
       justify-content: center;
@@ -147,35 +181,59 @@
       margin: 4rem auto;
       max-width: 1000px;
     }
+    
     .brand-logo {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 1rem;
     }
-    .brand-logo img {
-      height: 60px;
-      width: auto;
+    
+    .brand-logo .logo-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--primary-red);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
+    
     .brand-name {
       font-weight: bold;
-      color: var(--dark-gray);
+      color: var(--anthracite);
+      font-size: 1.2rem;
     }
+    
     .footer {
-      background: var(--dark-gray);
+      background: var(--anthracite);
       color: var(--white);
       padding: 3rem 2rem;
       text-align: center;
     }
+    
+    .footer p {
+      opacity: 0.8;
+    }
+    
     @media (max-width: 768px) {
       .hero h1 {
         font-size: 2.5rem;
       }
+      
       .hero p {
         font-size: 1.2rem;
       }
+      
       .section {
         padding: 4rem 1.5rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
       }
     }
   </style>
@@ -215,15 +273,15 @@
 
     <div class="brand-logos">
       <div class="brand-logo">
-        <div class="card-icon">🚀</div>
+        <div class="logo-icon">🚀</div>
         <div class="brand-name">L-P Newbiz</div>
       </div>
       <div class="brand-logo">
-        <div class="card-icon">🌎</div>
+        <div class="logo-icon">🌎</div>
         <div class="brand-name">L-P Factory</div>
       </div>
       <div class="brand-logo">
-        <div class="card-icon">💼</div>
+        <div class="logo-icon">💼</div>
         <div class="brand-name">L-P Capital</div>
       </div>
     </div>
@@ -233,5 +291,4 @@
     <p>© 2023 L-P Venture Group. All rights reserved.</p>
   </footer>
 </body>
-</html>
-
+  </html>
