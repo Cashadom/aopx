@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AOPx — Innovative Altcoin (March 2024)</title>
   <meta name="description" content="AOPx is an innovative altcoin launched in March 2024 on BSC. Explore tokenomics, roadmap, utilities and how to buy." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="icon.png">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -71,10 +75,11 @@
       z-index: 1;
     }
 
-    /* Header */
+    /* Header - Updated with icon */
     .header{position:sticky;top:0;z-index:50;background:rgba(15,15,17,.9);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
     .brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:800;letter-spacing:.5px}
+    .brand-icon{width:40px;height:40px;object-fit:contain}
     .brand .mark{background:var(--red);color:#fff;border-radius:10px;padding:6px 10px;font-weight:900}
     .menu{display:flex;align-items:center;gap:26px}
     .menu a{color:#e5e7eb;text-decoration:none;font-weight:600;font-size:14px;transition:.2s}
@@ -82,7 +87,7 @@
     .cta{background:var(--red);color:#fff !important;padding:10px 18px;border-radius:999px;box-shadow:0 8px 20px rgba(225,29,72,.35)}
     .burger{display:none;color:#fff;font-size:22px;cursor:pointer}
 
-    /* Hero */
+    /* Hero - Updated with icon */
     .hero{
       background: linear-gradient(125deg, rgba(10,10,15,0.9) 0%, rgba(26,26,46,0.8) 50%, rgba(10,10,15,0.9) 100%);
       color:#fff;
@@ -90,8 +95,10 @@
       overflow:hidden;
     }
     .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding:90px 0}
+    .hero-icon{width:80px;height:80px;margin-bottom:20px;object-fit:contain}
     .eyebrow{display:inline-block;background:rgba(225,29,72,.15);border:1px solid rgba(225,29,72,.35);color:#fff;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
-    .hero h1{font-size:clamp(36px,6vw,64px);line-height:1.1}
+    .hero h1{font-size:clamp(36px,6vw,64px);line-height:1.1;display:flex;align-items:center;gap:15px;flex-wrap:wrap}
+    .hero-title-icon{width:60px;height:60px;object-fit:contain}
     .hero p{color:#d1d5db;max-width:640px;margin:14px 0 26px}
     .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:14px;font-weight:800;text-decoration:none}
@@ -103,7 +110,8 @@
     .stat .num{font-size:22px;font-weight:900;color:#fff}
     .stat .lbl{font-size:12px;color:#cbd5e1;text-transform:uppercase;letter-spacing:.08em}
 
-    .hero-card{background:#111214;border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .hero-card{background:#111214;border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);position:relative}
+    .card-icon{position:absolute;top:-20px;right:-20px;width:60px;height:60px;object-fit:contain;filter:drop-shadow(0 5px 15px rgba(0,0,0,0.3))}
     .mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
     .mini{background:#0f0f11;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:16px;text-align:center}
     .mini .big{color:var(--red);font-weight:900;font-size:22px}
@@ -111,12 +119,13 @@
 
     /* Section base */
     section{padding:90px 0}
-    .section-title{margin-bottom:32px;text-align:center}
-    .section-title p{color:var(--muted);max-width:760px;margin:10px auto 0}
+    .section-title{margin-bottom:32px;text-align:center;position:relative}
+    .section-title-icon{width:50px;height:50px;margin:0 auto 15px;object-fit:contain;display:block}
 
     /* About */
     .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-    .card{background:var(--white);border:1px solid #eee;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
+    .card{background:var(--white);border:1px solid #eee;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;position:relative}
+    .card-small-icon{position:absolute;top:15px;right:15px;width:30px;height:30px;object-fit:contain;opacity:0.7}
     .badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #eee;border-radius:999px;padding:8px 12px;font-weight:700}
     .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px}
     .feature{background:var(--light);border:1px solid #eee;border-radius:12px;padding:12px;display:flex;gap:10px;align-items:center;font-weight:700}
@@ -143,7 +152,7 @@
 
     /* How To Buy */
     .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    .step{background:#fff;border:1px solid #eee;border-radius:16px;padding:18px}
+    .step{background:#fff;border:1px solid #eee;border-radius:16px;padding:18px;position:relative}
     .step .numtag{background:var(--red);color:#fff;border-radius:10px;padding:6px 10px;font-weight:900;display:inline-block;margin-bottom:8px}
 
     /* Roadmap - Improved Design */
@@ -256,6 +265,7 @@
     .footer{background:#0f0f11;color:#cbd5e1}
     .footer a{color:#e5e7eb;text-decoration:none}
     .footer a:hover{color:#fff}
+    .footer-icon{width:60px;height:60px;margin:0 auto 20px;object-fit:contain;display:block}
 
     /* Utilities */
     .muted{color:var(--muted)}
@@ -267,6 +277,9 @@
       .about-grid,.grid-2,.steps,.stats-cards{grid-template-columns:1fr 1fr}
       .menu{display:none}
       .burger{display:block}
+      
+      .hero h1{flex-direction:column;text-align:center;gap:10px}
+      .hero-title-icon{width:50px;height:50px}
       
       /* Responsive roadmap */
       .roadmap-container::before {
@@ -292,6 +305,8 @@
     @media (max-width: 640px){
       .steps,.about-grid,.grid-2,.stats-cards{grid-template-columns:1fr}
       .tabs{flex-wrap:wrap}
+      .brand-icon{width:30px;height:30px}
+      .hero-icon{width:60px;height:60px}
     }
 
     /* Scroll to top */
@@ -306,7 +321,11 @@
   <!-- Header -->
   <header class="header">
     <div class="container nav">
-      <a class="brand" href="#home"><span class="mark">AOPx</span><span>Altcoin</span></a>
+      <a class="brand" href="#home">
+        <img src="icon.png" alt="AOPx Logo" class="brand-icon">
+        <span class="mark">AOPx</span>
+        <span>Altcoin</span>
+      </a>
       <nav class="menu" id="menu">
         <a href="#about">About</a>
         <a href="#tokenomics">Tokenomics</a>
@@ -325,8 +344,12 @@
   <section class="hero" id="home">
     <div class="container hero-inner">
       <div>
+        <img src="icon.png" alt="AOPx Icon" class="hero-icon">
         <span class="eyebrow">Binance Smart Chain • BEP-20</span>
-        <h1>AOPx — Red. Clean. Fast.</h1>
+        <h1>
+          <img src="icon.png" alt="AOPx" class="hero-title-icon">
+          AOPx — Red. Clean. Fast.
+        </h1>
         <p>AOPx is a next‑generation altcoin launched in March 2024. Built on BSC, it delivers low fees, rapid finality, and a community‑first token model with transparent on‑chain data.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" target="_blank" href="https://pancakeswap.finance/swap?outputCurrency=0x8B4fa20C4B9111882754d8e83EcBEE8A0BFF33e0"><i class="fa-solid fa-cart-shopping"></i> Buy on PancakeSwap</a>
@@ -339,6 +362,7 @@
         </div>
       </div>
       <div class="hero-card">
+        <img src="icon.png" alt="AOPx" class="card-icon">
         <div class="mini-grid">
           <div class="mini"><div class="big">BSC</div><div class="small">Blockchain</div></div>
           <div class="mini"><div class="big">BEP‑20</div><div class="small">Standard</div></div>
@@ -353,11 +377,13 @@
   <section id="about">
     <div class="container">
       <div class="section-title">
+        <img src="icon.png" alt="AOPx" class="section-title-icon">
         <h2>About AOPx</h2>
         <p>A clean red/white/anthracite identity, a lean supply, and utilities that reward long‑term holders.</p>
       </div>
       <div class="about-grid">
         <div class="card">
+          <img src="icon.png" alt="AOPx" class="card-small-icon">
           <span class="badge"><i class="fa-solid fa-shield"></i> Security First</span>
           <h3 style="margin:12px 0 6px">Why AOPx?</h3>
           <p>We focus on real, sustainable tokenomics: fair distribution, liquidity depth, and a roadmap that prioritizes utility over hype. Everything is verifiable on‑chain.</p>
@@ -379,6 +405,7 @@
   <section id="tokenomics">
     <div class="container">
       <div class="section-title">
+        <img src="icon.png" alt="AOPx" class="section-title-icon">
         <h2>Tokenomics</h2>
         <p>Built for clarity and longevity. No nonsense, just numbers.</p>
       </div>
@@ -393,6 +420,7 @@
         <!-- Distribution -->
         <div class="grid-2 pane" id="pane-dist">
           <div class="card">
+            <img src="icon.png" alt="AOPx" class="card-small-icon">
             <h3>Allocation</h3>
             <ul class="list">
               <li><span class="dot"></span> 40% Liquidity & DEX/CEX Listings<div class="bar" aria-hidden="true"><span style="width:40%"></span></div></li>
@@ -403,6 +431,7 @@
             </ul>
           </div>
           <div class="card">
+            <img src="icon.png" alt="AOPx" class="card-small-icon">
             <h3>Supply</h3>
             <div class="stats-cards">
               <div class="card"><div class="value">17M</div><div class="label">Total Supply</div></div>
@@ -417,6 +446,7 @@
         <!-- Metrics -->
         <div class="grid-2 pane" id="pane-metrics" style="display:none">
           <div class="card">
+            <img src="icon.png" alt="AOPx" class="card-small-icon">
             <h3>Liquidity & Locks</h3>
             <p>Liquidity added on launch and periodically reinforced. Locks and vesting schedules are published for transparency.</p>
             <ul class="list">
@@ -426,6 +456,7 @@
             </ul>
           </div>
           <div class="card">
+            <img src="icon.png" alt="AOPx" class="card-small-icon">
             <h3>Contract</h3>
             <p>Audited BEP‑20 contract with standard, battle‑tested functionality.</p>
             <p><a target="_blank" href="https://bscscan.com/token/0x8b4fa20c4b9111882754d8e83ecbee8a0bff33e0"><i class="fa-solid fa-link"></i> View on BscScan</a></p>
@@ -435,6 +466,7 @@
         <!-- Utility -->
         <div class="grid-2 pane" id="pane-utility" style="display:none">
           <div class="card">
+            <img src="icon.png" alt="AOPx" class="card-small-icon">
             <h3>Utilities</h3>
             <ul class="list">
               <li><span class="dot"></span> Staking & Yield — earn rewards by locking AOPx</li>
@@ -444,6 +476,7 @@
             </ul>
           </div>
           <div class="card">
+            <img src="icon.png" alt="AOPx" class="card-small-icon">
             <h3>Future Add‑ons</h3>
             <p>NFT integrations, cross‑chain bridges, and launchpad participation for verified community projects.</p>
           </div>
@@ -456,6 +489,7 @@
   <section id="how">
     <div class="container">
       <div class="section-title">
+        <img src="icon.png" alt="AOPx" class="section-title-icon">
         <h2>How to Buy AOPx</h2>
         <p>Four clean steps and you're in.</p>
       </div>
@@ -472,6 +506,7 @@
   <section id="roadmap">
     <div class="container">
       <div class="section-title">
+        <img src="icon.png" alt="AOPx" class="section-title-icon">
         <h2>Roadmap</h2>
         <p>From launch to major DEX listings - our journey through 2026</p>
       </div>
@@ -570,6 +605,7 @@
   <section id="faq">
     <div class="container">
       <div class="section-title">
+        <img src="icon.png" alt="AOPx" class="section-title-icon">
         <h2>Frequently Asked Questions</h2>
         <p>Quick answers to common questions about AOPx</p>
       </div>
@@ -594,6 +630,7 @@
   <footer class="footer" id="contact">
     <div class="container">
       <div class="center">
+        <img src="icon.png" alt="AOPx" class="footer-icon">
         <h3>Join the AOPx Community</h3>
         <p class="muted">Follow us on social media and join our communities</p>
         <div style="margin:20px 0">
